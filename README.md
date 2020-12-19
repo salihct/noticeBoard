@@ -1,1 +1,1 @@
-NodeJs realtime noticeboar using websocket.
+NodeJs realtime noticeboard web app using websocket.

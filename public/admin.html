@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Admin</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <textarea class="form-control mt-5 " name="message" id="message" ></textarea>
+            <button id="update" class="btn btn-primary mt-2">Update board</button>
+        </div>
+        
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+        document.getElementById("update").addEventListener("click", ()=>{
+            let txt = document.getElementById("message").value;
+            socket.emit("message",txt);
+        })
+    </script>
+</body>
+</html>
